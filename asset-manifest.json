@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Watchlists/static/css/main.d94ab426.css",
+    "main.js": "/Watchlists/static/js/main.a096feaf.js",
+    "static/media/Inter-Regular.woff": "/Watchlists/static/media/Inter-Regular.900ac80dff6cb7c838af.woff",
+    "index.html": "/Watchlists/index.html",
+    "main.d94ab426.css.map": "/Watchlists/static/css/main.d94ab426.css.map",
+    "main.a096feaf.js.map": "/Watchlists/static/js/main.a096feaf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d94ab426.css",
+    "static/js/main.a096feaf.js"
+  ]
+}

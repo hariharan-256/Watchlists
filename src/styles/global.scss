@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./variable.scss";
+@import "./mixins.scss";
+@import "./fonts.scss";
+
+// basic overwriting styles
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul,
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-r);
+    color: var(--body-bg);
+    background-color: var(--body);
+    @include Font(0.875rem, 1.375rem);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: var(--font-m);
+    @include Font(0.875rem, 1.375rem);
+}
+
+// input number icon removing
+input[type="number"] {
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+}
+
+input:focus {
+    outline: none;
+}
+
+.loader {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.mobView {
+    display: none;
+}
+
+// styles for responsive...
+@media screen and (max-width:1024px) {
+    .mobView {
+        display: block;
+    }
+
+    .main {
+        border-radius: 10px;
+    }
+
+    .headLabel {
+        svg {
+            display: block;
+        }
+    }
+
+    .sidebar {
+        position: fixed;
+        left: -100%;
+        transition: all .5s ease-in;
+        z-index: 10;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(54, 69, 79, 0.3), 0 1px 3px rgba(54, 69, 79, 0.2);
+
+
+
+        &.Open {
+            left: -17px;
+        }
+    }
+}

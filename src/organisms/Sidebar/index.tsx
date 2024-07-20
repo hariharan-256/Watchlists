@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../redux/actions/authActions";
 import { getCurrentUser, getUsername } from "../../utils/localstorage";
-import { TOGGLE_SIDEBAR } from "../../redux/types/types";
+import { SET_USER, TOGGLE_SIDEBAR } from "../../redux/types/types";
 import { LuChevronFirst } from "react-icons/lu";
 
 const Sidebar: React.FC = () => {
@@ -33,7 +33,7 @@ const Sidebar: React.FC = () => {
 		const userData = localStorage.getItem("currentUser");
 		if (userData) {
 			const user = JSON.parse(userData);
-			dispatch({ type: "SET_USER", payload: user });
+			dispatch({ type: SET_USER, payload: user });
 		}
 	}, [dispatch]);
 	return (

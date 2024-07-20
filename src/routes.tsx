@@ -14,6 +14,7 @@ export const AllRoutes = () => {
 				<Route path="/login" element={<Login />} />
 				<Route path="/movie/:id" element={<MovieDetail />} />
 				<Route path="/watchlist" element={<Watchlist />} />
+				<Route path="*" element={<MovieSearch />} />
 			</Routes>
 		</BrowserRouter>
 	);

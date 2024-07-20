@@ -6,7 +6,7 @@ export const searchMovies = (title: string) => async (dispatch: Function) => {
         dispatch({ type: GET_SEARCH_MOVIES_REQUEST });
         axios
             .get(
-                `http://www.omdbapi.com/?s=${title}&apikey=${APIkey}`,
+                `https://www.omdbapi.com/?s=${title}&apikey=${APIkey}`,
             )
             .then((response:any) => {
                 dispatch({
@@ -26,7 +26,7 @@ export const getMovieDetails = (id: any) => async (dispatch: Function) => {
         dispatch({ type: GET_SEARCH_MOVIES_REQUEST });
         axios
             .get(
-                `http://www.omdbapi.com/?i=${id}&apikey=${APIkey}`,
+                `https://www.omdbapi.com/?i=${id}&apikey=${APIkey}`,
             )
             .then((response:any) => {
                 dispatch({

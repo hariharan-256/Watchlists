@@ -4,7 +4,6 @@
 
 @import "./variable.scss";
 @import "./mixins.scss";
-@import "./fonts.scss";
 
 // basic overwriting styles
 
@@ -17,23 +16,24 @@ h6,
 ol,
 ul,
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-    font-family: var(--font-r);
-    color: var(--body-bg);
-    background-color: var(--body);
-    @include Font(0.875rem, 1.375rem);
+	font-family: "Roboto", sans-serif;
+	color: var(--body-bg);
+	font-weight: 400;
+	background-color: var(--body);
+	@include Font(0.875rem, 1.375rem);
 }
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 li {
-    list-style: none;
+	list-style: none;
 }
 
 button,
@@ -41,69 +41,66 @@ input,
 optgroup,
 select,
 textarea {
-    font-family: var(--font-m);
-    @include Font(0.875rem, 1.375rem);
+	@include Font(0.875rem, 1.375rem);
 }
 
 // input number icon removing
 input[type="number"] {
-
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-    }
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+	}
 }
 
 input:focus {
-    outline: none;
+	outline: none;
 }
 
 .loader {
-    animation: spin 2s linear infinite;
+	animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
+	0% {
+		transform: rotate(0deg);
+	}
 
-    100% {
-        transform: rotate(360deg);
-    }
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 .mobView {
-    display: none;
+	display: none;
 }
 
 // styles for responsive...
-@media screen and (max-width:1024px) {
-    .mobView {
-        display: block;
-    }
+@media screen and (max-width: 1024px) {
+	.mobView {
+		display: block;
+	}
 
-    .main {
-        border-radius: 10px;
-    }
+	.main {
+		border-radius: 10px;
+	}
 
-    .headLabel {
-        svg {
-            display: block;
-        }
-    }
+	.headLabel {
+		svg {
+			display: block;
+		}
+	}
 
-    .sidebar {
-        position: fixed;
-        left: -100%;
-        transition: all .5s ease-in;
-        z-index: 10;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(54, 69, 79, 0.3), 0 1px 3px rgba(54, 69, 79, 0.2);
+	.sidebar {
+		position: fixed;
+		left: -100%;
+		transition: all 0.5s ease-in;
+		z-index: 10;
+		border-radius: 8px;
+		border: 1px solid #42a7c3;
 
-
-
-        &.Open {
-            left: -17px;
-        }
-    }
+		&.Open {
+			left: 0;
+			margin-left: 0;
+		}
+	}
 }
